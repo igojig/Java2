@@ -3,6 +3,10 @@ package lesson_2;
 import lesson_2.exceptions.MyArrayDataException;
 import lesson_2.exceptions.MyArraySizeException;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.*;
+
 public class Main {
     public final static int ROW_COL_SIZE = 4;
 
@@ -75,7 +79,6 @@ public class Main {
             System.out.println("ERROR:");
             System.out.println(e.getMessage());
         }
-
 
     }
 }
