@@ -14,7 +14,8 @@ public class PhoneBook {
     }
 
     public void add(String name, String phoneNumber) {
-        List<String> listPhones = storage.getOrDefault(name, new ArrayList<>());
+//        List<String> listPhones = storage.getOrDefault(name, new ArrayList<>());
+        List<String> listPhones = storage.computeIfAbsent(name, s -> new ArrayList<>());
         listPhones.add(phoneNumber);
         storage.putIfAbsent(name, listPhones);
     }

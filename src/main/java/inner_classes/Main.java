@@ -4,6 +4,7 @@ package inner_classes;
 class Cat{
     String name;
     class Passport{
+        static int i;
         String name;
         int age;
 
