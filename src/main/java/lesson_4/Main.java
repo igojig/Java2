@@ -7,11 +7,13 @@ public class Main {
 
     public static void main(String[] args) {
         float[] array = new float[SIZE];
-        method1(array);
-        method2(array);
+        float res1 = method1(array);
+        float res2 = method2(array);
+        System.out.println(res1);
+        System.out.println(res2);
     }
 
-    private static void method1(float[] array) {
+    private static float method1(float[] array) {
         fillArray(array);
 
         long startTime = System.currentTimeMillis();
@@ -20,9 +22,18 @@ public class Main {
 
         System.out.printf("Duration: %,d ms\n", endTime - startTime);
 //        System.out.println(Arrays.toString(array));
+        return sumArray(array);
     }
 
-    private static void method2(float[] array) {
+    private static float sumArray(float[] array) {
+        float res = 0;
+        for (float v : array) {
+            res += v;
+        }
+        return res;
+    }
+
+    private static float method2(float[] array) {
         fillArray(array);
 
         float[] arrLeft = new float[HALF_SIZE];
@@ -54,6 +65,7 @@ public class Main {
 //        System.out.println("Result array: " + Arrays.toString(array));
 
         System.out.printf("Duration: %,d ms\n", endTime - startTime);
+        return sumArray(array);
     }
 
     static void calc(float[] array, int offset) {
@@ -69,7 +81,7 @@ public class Main {
 
     static void fillArray(float[] array) {
         for (int i = 0; i < array.length; i++) {
-            array[i] = i;
+            array[i] = 1;
         }
     }
 
